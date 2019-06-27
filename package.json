@@ -1,0 +1,9 @@
+{
+  "name": "dsx",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "author": "siddharthkp",
+  "license": "MIT"
+}
