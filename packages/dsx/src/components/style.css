@@ -8,6 +8,13 @@ body {
     Ubuntu, Droid Sans, Helvetica Neue, sans-serif;
 }
 
+body .sidebar {
+  background-color: #f5faff;
+  top: 0;
+  max-height: 100vh;
+  border-right: 1px solid #e1e7ec75;
+}
+
 a {
   color: var(--blue);
   text-decoration: none;
@@ -37,8 +44,10 @@ ul li {
 }
 
 pre.prism-code {
+  margin: 0;
   padding: var(--space-4);
   border-radius: var(--space-2);
+  overflow: scroll;
 }
 
 pre span.meta {
@@ -50,7 +59,7 @@ pre span.meta {
   white-space: pre;
   font-family: monospace;
   font-size: 16px;
-  color: #a20808;
+  color: var(--red);
 }
 
 [data-reach-skip-link] {
@@ -58,4 +67,32 @@ pre span.meta {
 }
 [data-reach-skip-link]:focus {
   opacity: 1;
+}
+
+code {
+  font-size: 16px;
+  vertical-align: text-top;
+  color: var(--purple);
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  margin-bottom: 48px;
+}
+
+table th {
+  text-align: left;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 1px;
+  font-size: 12px;
+}
+
+table td,
+table th {
+  padding: 8px;
+  border-bottom: 1px solid #d1d9e0;
+  vertical-align: top;
 }

@@ -17,6 +17,7 @@ exports.createPages = ({ graphql, actions }) => {
               }
               frontmatter {
                 title
+                description
               }
               code {
                 scope

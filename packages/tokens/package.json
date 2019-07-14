@@ -10,6 +10,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "@styled-system/theme-get": "^5.0.12",
     "styled-system": "^5.0.12"
   }
 }

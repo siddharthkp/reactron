@@ -4,45 +4,49 @@ import MDXRenderer from 'gatsby-mdx/mdx-renderer'
 
 import Layout from '../components/Layout'
 
-class BlogPostTemplate extends React.Component {
-  render() {
-    const post = this.props.data.mdx
-    const siteTitle = this.props.data.site.siteMetadata.title
-    const { previous, next } = this.props.pageContext
+function ComponentTemplate(props) {
+  const page = props.data.mdx
+  const siteTitle = props.data.site.siteMetadata.title
+  const { previous, next } = props.pageContext
 
-    return (
-      <Layout location={this.props.location} title={siteTitle}>
-        <h1>{post.frontmatter.title}</h1>
-        <MDXRenderer>{post.code.body}</MDXRenderer>
+  const componentsProps = getComponentProps(props)
 
-        <ul
-          style={{
-            marginTop: 72,
-            display: 'flex',
-            justifyContent: 'space-between',
-          }}
-        >
-          <li>
-            {previous && (
-              <Link to={previous.fields.slug} rel="prev">
-                ← {previous.frontmatter.title}
-              </Link>
-            )}
-          </li>
-          <li>
-            {next && (
-              <Link to={next.fields.slug} rel="next">
-                {next.frontmatter.title} →
-              </Link>
-            )}
-          </li>
-        </ul>
-      </Layout>
-    )
-  }
+  return (
+    <Layout location={props.location} title={siteTitle}>
+      <h1>{page.frontmatter.title}</h1>
+      <p style={{ marginBottom: 72, color: '#6E7A8A' }}>
+        {page.frontmatter.description}
+      </p>
+      <PropsTable props={componentsProps} />
+      <MDXRenderer>{page.code.body}</MDXRenderer>
+
+      <ul
+        style={{
+          marginTop: 72,
+          display: 'flex',
+          justifyContent: 'space-between'
+        }}
+      >
+        <li>
+          {previous && (
+            <Link to={previous.fields.slug} rel="prev">
+              ← {previous.frontmatter.title}
+            </Link>
+          )}
+        </li>
+        <li>
+          {next && (
+            <Link to={next.fields.slug} rel="next">
+              {next.frontmatter.title} →
+            </Link>
+          )}
+        </li>
+      </ul>
+    </Layout>
+  )
 }
 
-export default BlogPostTemplate
+export default ComponentTemplate
 
 export const pageQuery = graphql`
   query($slug: String!) {
@@ -53,9 +57,9 @@ export const pageQuery = graphql`
     }
     mdx(fields: { slug: { eq: $slug } }) {
       id
-      excerpt(pruneLength: 160)
       frontmatter {
         title
+        description
       }
       code {
         body
@@ -73,5 +77,119 @@ export const pageQuery = graphql`
         }
       }
     }
+    allComponentMetadata {
+      edges {
+        node {
+          displayName
+          props {
+            name
+            type {
+              name
+              raw
+              value
+            }
+            description {
+              text
+            }
+            required
+            defaultValue {
+              computed
+              value
+            }
+          }
+        }
+      }
+    }
   }
 `
+
+function getComponentProps(props) {
+  const page = props.data.mdx
+  console.log(page)
+  const allComponentMetadata = props.data.allComponentMetadata.edges
+
+  const componentProps = allComponentMetadata.find(function({ node }) {
+    return node.displayName === page.frontmatter.title
+  })
+
+  if (componentProps) return componentProps.node.props
+  else return []
+}
+
+function PropsTable({ props }) {
+  return (
+    <>
+      <h2>Props</h2>
+      <table>
+        <thead>
+          <tr>
+            <th width="15%">name</th>
+            <th width="70%">description</th>
+            <th width="15%">default</th>
+          </tr>
+        </thead>
+        <tbody>
+          {props.map(function(
+            { name, type, description, required, defaultValue },
+            index
+          ) {
+            return (
+              <tr key={index}>
+                <td>
+                  <code>
+                    {name}
+                    {required ? '*' : ''}
+                  </code>
+                </td>
+                <td>
+                  {description.text}
+                  <br />
+                  <code>{parseType(type)}</code>
+                </td>
+                <td>
+                  <code>
+                    {defaultValue ? cleanUpString(defaultValue.value) : ''}
+                  </code>
+                </td>
+              </tr>
+            )
+          })}
+        </tbody>
+      </table>
+    </>
+  )
+}
+
+const parseType = type => {
+  if (type.name === 'shape') {
+    return 'shape ' + getShape(type.value)
+  } else if (type.name === 'enum') {
+    return 'one of: ' + getArray(type.value).join(', ')
+  } else if (type.name === 'custom') {
+    return replaceRaw(type.raw)
+  } else if (type.name === 'union') {
+    return 'one of: ' + getArray(type.value).join(' or ')
+  } else {
+    return type.name
+  }
+}
+
+const getShape = value => {
+  const shape = {}
+
+  Object.keys(value).forEach(key => {
+    shape[key] = value[key].name
+  })
+
+  return JSON.stringify(shape, null, 2)
+}
+
+const cleanUpString = string => {
+  return string.replace(/"/g, '')
+}
+
+const getArray = elements => {
+  return elements.map(function({ value }) {
+    return cleanUpString(value)
+  })
+}

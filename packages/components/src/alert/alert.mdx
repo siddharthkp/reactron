@@ -1,37 +1,38 @@
 ---
 title: Alert
+description: Provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages.
 ---
 
-import { Alert } from "components";
+import Examples from "components/src/alert/examples";
 
-Provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages.
+## Examples
 
-#### Examples
-
-<AlertWrapper>
-  <Alert>Oh noes!</Alert>
-</AlertWrapper>
+<Examples.Simple />
 
 ```jsx
 <Alert>Oh noes!</Alert>
 ```
 
-<br />
+### Appearances
 
-<AlertWrapper>
-  <Alert dismissible={true}>Oh noes!</Alert>
-</AlertWrapper>
+There are multiple appearances for `Alert`, dependending on the context.
+
+<Examples.Styles />
 
 ```jsx
-<Alert dismissible={true}>Oh noes!</Alert>
+<Alert appearance="error">Oh no! Something went horribly wrong</Alert>
+<Alert appearance="warning">Hey! You should take care of this</Alert>
+<Alert appearance="info">By the way, here's some information</Alert>
+<Alert appearance="success">Kudos! You did great</Alert>
+<Alert appearance="transparent">Sometimes, you have to subtle</Alert>
 ```
 
-export function AlertWrapper(props) {
-  const [visible, setVisible] = React.useState(false);
-  return (
-    <>
-      <button onClick={_ => setVisible(true)}>Show Alert</button>
-      {visible ? props.children : null}
-    </>
-  );
-}
+### Dismissible
+
+If you want the user to be able to dismiss the Alert, you can add the `dismissible` prop along with a `onDismiss` method.
+
+<Examples.Dismissible />
+
+```jsx
+<Alert onDismiss={props.onDismiss}>Oh noes!</Alert>
+```

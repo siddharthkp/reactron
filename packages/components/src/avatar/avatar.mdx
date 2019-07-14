@@ -1,7 +1,33 @@
 ---
 title: Avatar
+description: Displays an image representing a User
 ---
 
 import { Avatar } from "components";
+import { ExampleWrapper } from "components/utils";
 
-<Avatar src="https://twitter-avatar.now.sh/reactjs" />
+<ExampleWrapper>
+  <Avatar
+    size="small"
+    marginRight={3}
+    src="https://twitter-avatar.now.sh/reactjs"
+    alt="react"
+  />
+  <Avatar
+    size="medium"
+    marginRight={3}
+    src="https://twitter-avatar.now.sh/reactjs"
+    alt="react"
+  />
+  <Avatar
+    size="large"
+    src="https://twitter-avatar.now.sh/reactjs"
+    alt="react"
+  />
+</ExampleWrapper>
+
+```jsx
+<Avatar size="small" src="https://twitter-avatar.now.sh/reactjs" alt="react" />
+<Avatar size="medium" src="https://twitter-avatar.now.sh/reactjs" alt="react" />
+<Avatar size="large" src="https://twitter-avatar.now.sh/reactjs" alt="react" />
+```

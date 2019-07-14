@@ -1,36 +1,21 @@
-/* TODOs
-  1. replace with <Button appearance="link">
-    once we have it
-  2. Use <Stack> or <Row> instead of manually setting flex
-*/
-
 import React from "react";
-import styled from "@emotion/styled";
-import { ThemeProvider } from "emotion-theming";
-import shouldForwardProp from "@styled-system/should-forward-prop";
-
-import {
-  colorStyle,
-  space,
-  border,
-  layout,
-  flexbox,
-  fontSize
-} from "styled-system";
 import ReachAlert from "@reach/alert";
+import PropTypes from "prop-types";
 
-import theme from "tokens";
-import Container from "../utils/container";
+import { styled, Container } from "components/utils";
+import { colorStyle, space, border, layout, fontSize } from "styled-system";
+import { Stack } from "components";
 
-const Element = styled(ReachAlert, { shouldForwardProp })`
+const Element = styled(ReachAlert)`
   ${colorStyle}
   ${space}
   ${border}
-  ${layout}
-  ${flexbox}
 `;
 
-const Cross = styled.button`
+/* TODO: replace with <Button appearance="link">
+    once we have it
+*/
+const Cross = styled("button")`
   ${layout}
   ${colorStyle}
   ${border}
@@ -38,21 +23,15 @@ const Cross = styled.button`
   cursor: pointer;
 `;
 
-// background: none;
-// border: none;
-// font-size: 1.5em;
 function Alert({ dismissible, onDismiss, ...props }) {
   return (
-    <ThemeProvider theme={theme}>
-      <Element
-        {...props}
-        type="assertive"
-        colors="warning"
-        borderRadius={2}
-        display="flex"
-        justifyContent="space-between"
-        alignItems="center"
-      >
+    <Element
+      {...props}
+      type="assertive"
+      colors={props.appearance}
+      borderRadius={2}
+    >
+      <Stack>
         <Container padding={3}>{props.children}</Container>
         {dismissible ? (
           <Cross
@@ -68,12 +47,28 @@ function Alert({ dismissible, onDismiss, ...props }) {
             ×
           </Cross>
         ) : null}
-      </Element>
-    </ThemeProvider>
+      </Stack>
+    </Element>
   );
 }
 
+Alert.propTypes = {
+  /** Appearance */
+  appearance: PropTypes.oneOf([
+    "warning",
+    "error",
+    "info",
+    "success",
+    "transparent"
+  ]),
+  /** Can the user disable the alert? */
+  dismissible: PropTypes.bool,
+  /** Method to call on dismiss, required with dismissible */
+  onDismiss: PropTypes.func
+};
+
 Alert.defaultProps = {
+  appearance: "warning",
   dismissible: false,
   onDismiss: () => {}
 };

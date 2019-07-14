@@ -9,9 +9,9 @@ function Sidebar({ Layout, Main, Sidebar, Content, ...props }) {
 
   return (
     <Layout>
-      <SkipNavLink />
       <Main>
-        <Sidebar>
+        <Sidebar className="sidebar">
+          <SkipNavLink />
           {navigation.map(section => (
             <Section
               key={section.title}
@@ -32,7 +32,7 @@ function Section(props) {
   return (
     <section>
       <h4 style={{ margin: 0 }}>{props.title}</h4>
-      <ul className="sidebar">
+      <ul>
         {props.items.map(name => {
           // find matching page
           const matchingPage = props.pages.find(function({ node }) {

@@ -1,21 +1,27 @@
 import React from "react";
-import styled from "@emotion/styled";
-import { ThemeProvider } from "emotion-theming";
+import { styled } from "components/utils";
 import { space, width, border } from "styled-system";
-import theme from "tokens";
+import PropTypes from "prop-types";
 
-const Element = styled.img`
+const Element = styled("img")`
   ${width}
   ${border}
   ${space}
 `;
 
-function Avatar(props) {
-  return (
-    <ThemeProvider theme={theme}>
-      <Element margin="space.3" width="50" borderRadius="radii.3" {...props} />
-    </ThemeProvider>
-  );
+function Avatar({ size, ...props }) {
+  return <Element width={"avatar." + size} borderRadius={2} {...props} />;
 }
+
+Avatar.defaultProps = {
+  size: "small"
+};
+
+Avatar.propTypes = {
+  /** Size of the avatar */
+  size: PropTypes.oneOf(["small", "medium", "large"]),
+  /** Alt text for avatar image, example: username*/
+  alt: PropTypes.string.isRequired
+};
 
 export default Avatar;
