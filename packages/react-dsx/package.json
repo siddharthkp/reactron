@@ -1,7 +1,6 @@
 {
-  "name": "dsx",
-  "private": true,
-  "version": "0.1.0",
+  "name": "react-dsx",
+  "version": "0.0.1",
   "bin": "index.js",
   "dependencies": {
     "@mdx-js/mdx": "^0.16.6",

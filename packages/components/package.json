@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "docs": "dsx"
+    "docs": "react-dsx"
   },
   "keywords": [],
   "author": "",
@@ -19,6 +19,6 @@
     "styled-system": "^5.0.12"
   },
   "devDependencies": {
-    "dsx": "0.1.0"
+    "react-dsx": "0.0.1"
   }
 }

@@ -11,7 +11,7 @@ module.exports = {
       options: {
         extensions: ['.mdx', '.md'],
         path: path.join(directoryRoot),
-        ignore: [`**/\.*`],
+        ignore: ['**/node_modules'],
         name: `components`
       }
     },
