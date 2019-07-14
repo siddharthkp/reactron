@@ -7,7 +7,6 @@ function BlogIndex(props) {
   const pages = props.data.allMdx.edges
 
   const home = getHomePage(pages)
-  console.log(home.fields.slug)
 
   return (
     <Layout>
@@ -45,5 +44,5 @@ function getHomePage(pages) {
   // default to first page
   // if it isn't explicity marked
   if (explicitlyMarked) return explicitlyMarked.node
-  else pages[0].node
+  else return pages[0].node
 }

@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "docs": "dsx"
   },
   "keywords": [],
   "author": "",
@@ -17,5 +17,8 @@
     "emotion-theming": "^10.0.14",
     "prop-types": "^15.7.2",
     "styled-system": "^5.0.12"
+  },
+  "devDependencies": {
+    "dsx": "0.1.0"
   }
 }

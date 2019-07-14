@@ -1,4 +1,5 @@
 const path = require('path')
+const directoryRoot = process.env.DIRECTORY_ROOT
 
 module.exports = {
   siteMetadata: {
@@ -8,7 +9,9 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: path.join(__dirname, '../components'),
+        extensions: ['.mdx', '.md'],
+        path: path.join(directoryRoot),
+        ignore: [`**/\.*`],
         name: `components`
       }
     },
@@ -32,17 +35,6 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-react-docgen`,
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
-        start_url: `/`,
-        background_color: `#ffffff`,
-        theme_color: `#663399`,
-        display: `minimal-ui`
-      }
-    },
     `gatsby-plugin-react-helmet`,
     'gatsby-theme-sidebar'
   ]
