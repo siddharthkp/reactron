@@ -1,0 +1,18 @@
+:root {
+  --black: #333;
+  --gray: #9797ab;
+  --blue: #007bff;
+
+  --space-0: 0;
+  --space-1: 2px;
+  --space-2: 4px;
+  --space-3: 8px;
+  --space-4: 16px;
+  --space-5: 32px;
+  --space-6: 64px;
+
+  --radii-0: 0;
+  --radii-1: 2px;
+  --radii-2: 5px;
+  --radii-3: 10px;
+}

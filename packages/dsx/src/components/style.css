@@ -1,0 +1,61 @@
+@import './variables.css';
+
+body {
+  font-size: 18px;
+  line-height: 1.4;
+  color: var(--black);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Ubuntu, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: var(--blue);
+  text-decoration: none;
+}
+
+ul {
+  margin: 0;
+  margin-bottom: var(--space-4);
+  padding-left: 0;
+  list-style: none;
+}
+ul li {
+  padding: var(--space-3) var(--space-4);
+}
+
+.sidebar li {
+  color: var(--gray);
+}
+.sidebar a {
+  color: var(--black);
+}
+.sidebar a:hover {
+  color: var(--blue);
+}
+.sidebar a[aria-current] {
+  color: var(--blue);
+}
+
+pre.prism-code {
+  padding: var(--space-4);
+  border-radius: var(--space-2);
+}
+
+pre span.meta {
+  color: var(--blue);
+  user-select: none;
+}
+
+.react-live-error {
+  white-space: pre;
+  font-family: monospace;
+  font-size: 16px;
+  color: #a20808;
+}
+
+[data-reach-skip-link] {
+  opacity: 0;
+}
+[data-reach-skip-link]:focus {
+  opacity: 1;
+}

@@ -1,0 +1,20 @@
+{
+  "name": "components",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@emotion/core": "^10.0.14",
+    "@emotion/styled": "^10.0.14",
+    "@reach/alert": "^0.1.5",
+    "@styled-system/should-forward-prop": "^5.0.12",
+    "emotion-theming": "^10.0.14",
+    "styled-system": "^5.0.12"
+  }
+}

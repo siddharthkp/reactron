@@ -1,0 +1,37 @@
+---
+title: Alert
+---
+
+import { Alert } from "components";
+
+Provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages.
+
+#### Examples
+
+<AlertWrapper>
+  <Alert>Oh noes!</Alert>
+</AlertWrapper>
+
+```jsx
+<Alert>Oh noes!</Alert>
+```
+
+<br />
+
+<AlertWrapper>
+  <Alert dismissible={true}>Oh noes!</Alert>
+</AlertWrapper>
+
+```jsx
+<Alert dismissible={true}>Oh noes!</Alert>
+```
+
+export function AlertWrapper(props) {
+  const [visible, setVisible] = React.useState(false);
+  return (
+    <>
+      <button onClick={_ => setVisible(true)}>Show Alert</button>
+      {visible ? props.children : null}
+    </>
+  );
+}
