@@ -17,7 +17,7 @@ function ComponentTemplate(props) {
       <p style={{ marginBottom: 72, color: '#6E7A8A' }}>
         {page.frontmatter.description}
       </p>
-      <PropsTable props={componentsProps} />
+      {componentsProps.length ? <PropsTable props={componentsProps} /> : null}
       <MDXRenderer>{page.code.body}</MDXRenderer>
 
       <ul
@@ -105,7 +105,6 @@ export const pageQuery = graphql`
 
 function getComponentProps(props) {
   const page = props.data.mdx
-  console.log(page)
   const allComponentMetadata = props.data.allComponentMetadata.edges
 
   const componentProps = allComponentMetadata.find(function({ node }) {

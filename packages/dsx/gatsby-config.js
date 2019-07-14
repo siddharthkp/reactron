@@ -1,18 +1,16 @@
 const path = require('path')
 
-console.log(path.join(__dirname, '../components/'))
-
 module.exports = {
   siteMetadata: {
-    title: `Components`,
+    title: `Components`
   },
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: path.join(__dirname, '../components'),
-        name: `components`,
-      },
+        name: `components`
+      }
     },
     {
       resolve: `gatsby-mdx`,
@@ -22,14 +20,14 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 590,
-            },
+              maxWidth: 590
+            }
           },
           {
-            resolve: `gatsby-remark-smartypants`,
-          },
-        ],
-      },
+            resolve: `gatsby-remark-smartypants`
+          }
+        ]
+      }
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
@@ -42,10 +40,10 @@ module.exports = {
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#663399`,
-        display: `minimal-ui`,
-      },
+        display: `minimal-ui`
+      }
     },
     `gatsby-plugin-react-helmet`,
-    'gatsby-theme-sidebar',
-  ],
+    'gatsby-theme-sidebar'
+  ]
 }

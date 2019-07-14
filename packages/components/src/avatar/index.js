@@ -10,7 +10,7 @@ const Element = styled("img")`
 `;
 
 function Avatar({ size, ...props }) {
-  return <Element width={"avatar." + size} borderRadius={2} {...props} />;
+  return <Element {...props} width={"avatar." + size} borderRadius={4} />;
 }
 
 Avatar.defaultProps = {
