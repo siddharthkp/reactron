@@ -1,5 +1,5 @@
 {
-  "name": "react-dsx",
+  "name": "dsx",
   "version": "0.0.1",
   "bin": "index.js",
   "dependencies": {

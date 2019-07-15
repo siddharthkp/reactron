@@ -1,5 +1,5 @@
 {
-  "name": "dsx",
+  "name": "react-components",
   "private": true,
   "workspaces": [
     "packages/*"
