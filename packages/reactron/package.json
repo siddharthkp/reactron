@@ -10,6 +10,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "tokens": "0.0.1",
     "@emotion/core": "^10.0.14",
     "@emotion/styled": "^10.0.14",
     "@reach/alert": "^0.1.5",
