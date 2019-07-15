@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
+const fs = require('fs-extra')
 const execa = require('execa')
 const chalk = require('chalk')
 const path = require('path')
@@ -30,12 +31,14 @@ async function start() {
   console.log()
   spinner.start()
 
+  fs.removeSync(path.join(__dirname, '.cache'))
+
   try {
     await subprocess
   } catch (error) {
     spinner.fail()
     console.log(colors.fail('Could not compile'), '\n')
-    console.log(error)
+    console.log(error.stdout, error.stderr)
   }
 }
 

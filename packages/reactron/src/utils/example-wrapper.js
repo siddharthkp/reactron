@@ -1,7 +1,7 @@
 import { color, space, border } from "styled-system";
-import { styled } from "components/utils";
+import { ThemeProvider } from "reactron";
+import { styled } from "reactron/utils";
 import theme, { get } from "tokens";
-import { ThemeProvider } from "components";
 
 const Element = styled("div")`
   ${color}

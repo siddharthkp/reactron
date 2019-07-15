@@ -1,5 +1,5 @@
 import React from "react";
-import { styled } from "components/utils";
+import { styled } from "reactron/utils";
 import { space, width, border } from "styled-system";
 import PropTypes from "prop-types";
 

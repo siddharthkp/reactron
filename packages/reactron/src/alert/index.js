@@ -2,9 +2,9 @@ import React from "react";
 import ReachAlert from "@reach/alert";
 import PropTypes from "prop-types";
 
-import { styled, Container } from "components/utils";
+import { Stack } from "reactron";
+import { styled, Container } from "reactron/utils";
 import { colorStyle, space, border, layout, fontSize } from "styled-system";
-import { Stack } from "components";
 
 const Element = styled(ReachAlert)`
   ${colorStyle}
