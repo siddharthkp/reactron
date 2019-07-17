@@ -6,7 +6,7 @@ import ExampleWrapper from "../utils/example-wrapper";
 function Simple() {
   return (
     <ExampleWrapper>
-      <Alert>Oh noes!</Alert>
+      <Alert margin="5">Oh noes!</Alert>
     </ExampleWrapper>
   );
 }
@@ -26,7 +26,7 @@ function Styles() {
       <Alert appearance="success" marginBottom={2}>
         Kudos! You did great
       </Alert>
-      <Alert appearance="transparent" marginBottom={2}>
+      <Alert appearance="light" marginBottom={2}>
         Sometimes, you have to subtle
       </Alert>
     </ExampleWrapper>

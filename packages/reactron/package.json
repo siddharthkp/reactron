@@ -10,14 +10,15 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "tokens": "0.0.1",
     "@emotion/core": "^10.0.14",
     "@emotion/styled": "^10.0.14",
     "@reach/alert": "^0.1.5",
+    "@styled-system/prop-types": "^5.0.12",
     "@styled-system/should-forward-prop": "^5.0.12",
     "emotion-theming": "^10.0.14",
     "prop-types": "^15.7.2",
-    "styled-system": "^5.0.12"
+    "styled-system": "^5.0.12",
+    "tokens": "0.0.1"
   },
   "devDependencies": {
     "dsx": "0.0.1"

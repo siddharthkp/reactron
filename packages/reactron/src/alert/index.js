@@ -1,66 +1,41 @@
 import React from "react";
-import ReachAlert from "@reach/alert";
 import PropTypes from "prop-types";
+import ReachAlert from "@reach/alert";
 
-import { Stack } from "reactron";
-import { styled, Container } from "reactron/utils";
-import { colorStyle, space, border, layout, fontSize } from "styled-system";
-
-const Element = styled(ReachAlert)`
-  ${colorStyle}
-  ${space}
-  ${border}
-`;
-
-/* TODO: replace with <Button appearance="link">
-    once we have it
-*/
-const Cross = styled("button")`
-  ${layout}
-  ${colorStyle}
-  ${border}
-  ${fontSize}
-  cursor: pointer;
-`;
+import { Element } from "reactron/utils";
+import { alert as styles } from "tokens/components";
 
 function Alert({ dismissible, onDismiss, ...props }) {
   return (
     <Element
-      {...props}
+      as={ReachAlert}
       type="assertive"
       colors={props.appearance}
-      borderRadius={2}
+      style={{ position: "relative" }}
+      {...styles}
+      {...props}
     >
-      <Stack>
-        <Container padding={3}>{props.children}</Container>
-        {dismissible ? (
-          <Cross
-            aria-label="Close alert"
-            colors="warning"
-            border="none"
-            fontSize="icon"
-            cursor="pointer"
-            width="clickable"
-            height="clickable"
-            onClick={onDismiss}
-          >
-            ×
-          </Cross>
-        ) : null}
-      </Stack>
+      <span>{props.children}</span>
+      {dismissible ? (
+        <Element
+          as="button"
+          aria-label="Close alert"
+          onClick={onDismiss}
+          position="absolute"
+          top="0"
+          right="0"
+          {...styles.closeButton}
+        >
+          ×
+        </Element>
+      ) : null}
     </Element>
   );
 }
 
 Alert.propTypes = {
   /** Appearance */
-  appearance: PropTypes.oneOf([
-    "warning",
-    "error",
-    "info",
-    "success",
-    "transparent"
-  ]),
+  appearance: PropTypes.oneOf(["warning", "error", "info", "success", "light"]),
   /** Can the user disable the alert? */
   dismissible: PropTypes.bool,
   /** Method to call on dismiss, required with dismissible */

@@ -146,9 +146,7 @@ function PropsTable({ props }) {
                   <code>{parseType(type)}</code>
                 </td>
                 <td>
-                  <code>
-                    {defaultValue ? cleanUpString(defaultValue.value) : ''}
-                  </code>
+                  <code>{defaultValue ? defaultValue.value : ''}</code>
                 </td>
               </tr>
             )
@@ -164,8 +162,6 @@ const parseType = type => {
     return 'shape ' + getShape(type.value)
   } else if (type.name === 'enum') {
     return 'one of: ' + getArray(type.value).join(', ')
-  } else if (type.name === 'custom') {
-    return replaceRaw(type.raw)
   } else if (type.name === 'union') {
     return 'one of: ' + getArray(type.value).join(' or ')
   } else {
@@ -188,7 +184,9 @@ const cleanUpString = string => {
 }
 
 const getArray = elements => {
-  return elements.map(function({ value }) {
-    return cleanUpString(value)
+  return elements.map(function(element) {
+    if (element.name) return cleanUpString(element.name)
+    else if (element.value) return cleanUpString(element.value)
+    else return JSON.stringify(element)
   })
 }

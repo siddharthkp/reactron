@@ -45,14 +45,14 @@ const colorStyles = {
       }
     }
   },
-  transparent: {
-    color: colors.grays[6],
-    backgroundColor: "transparent",
+  light: {
+    color: colors.grays[7],
+    backgroundColor: colors.grays[0],
     button: {
-      color: colors.grays[4],
+      color: colors.grays[5],
       backgroundColor: "transparent",
       "&:hover": {
-        color: colors.grays[6]
+        color: colors.grays[7]
       }
     }
   }

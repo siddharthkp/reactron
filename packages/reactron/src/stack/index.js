@@ -1,16 +1,11 @@
 import React from "react";
-import styled from "@emotion/styled";
-import { ThemeProvider } from "emotion-theming";
-import shouldForwardProp from "@styled-system/should-forward-prop";
-import { layout, flexbox } from "styled-system";
-
-const Element = styled("span", { shouldForwardProp })(layout, flexbox);
+import { Element } from "reactron/utils";
 
 function Stack(props) {
   return (
     <Element
       display="flex"
-      justifyContent="space-between"
+      justifyContent="start"
       alignItems="center"
       {...props}
     />

@@ -1,16 +1,11 @@
 import React from "react";
-import { styled } from "reactron/utils";
-import { space, width, border } from "styled-system";
 import PropTypes from "prop-types";
-
-const Element = styled("img")`
-  ${width}
-  ${border}
-  ${space}
-`;
+import { Element } from "reactron/utils";
 
 function Avatar({ size, ...props }) {
-  return <Element {...props} width={"avatar." + size} borderRadius={4} />;
+  return (
+    <Element as="img" width={"avatar." + size} borderRadius={4} {...props} />
+  );
 }
 
 Avatar.defaultProps = {

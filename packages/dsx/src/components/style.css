@@ -20,13 +20,13 @@ a {
   text-decoration: none;
 }
 
-ul {
+.sidebar ul {
   margin: 0;
   margin-bottom: var(--space-4);
   padding-left: 0;
   list-style: none;
 }
-ul li {
+.sidebar ul li {
   padding: var(--space-3) var(--space-4);
 }
 

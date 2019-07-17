@@ -1,0 +1,58 @@
+---
+title: Breadcrumb
+description: Indicate the current page’s location within a navigational hierarchy
+---
+
+import BreadcrumbExamples from "reactron/src/breadcrumb/examples";
+
+## Examples
+
+<BreadcrumbExamples.Simple />
+
+```jsx
+<Breadcrumb>
+  <Breadcrumb.Link href="/">Home</Breadcrumb.Link>
+  <Breadcrumb.Link href="/components">Components</Breadcrumb.Link>
+  <Breadcrumb.Link href="/components/breadcrumb">Breadcrumb</Breadcrumb.Link>
+</Breadcrumb>
+```
+
+### Third party router
+
+You can plug in a third party `Link` component with the `as` prop, example one from `@reach/router` or `gatsby`
+
+<BreadcrumbExamples.ExternalLink />
+
+```jsx
+import { Link } from "@reach/router";
+
+render(
+  <Breadcrumb>
+    <Breadcrumb>
+      <Breadcrumb.Link as={Link} to="/">
+        Home
+      </Breadcrumb.Link>
+      <Breadcrumb.Link as={Link} to="/components">
+        Components
+      </Breadcrumb.Link>
+      <Breadcrumb.Link as={Link} to="/components/breadcrumb">
+        Breadcrumb
+      </Breadcrumb.Link>
+    </Breadcrumb>
+  </Breadcrumb>
+);
+```
+
+### Custom Separator
+
+You can define your own separator as well with the `separator` prop.
+
+<BreadcrumbExamples.Separator />
+
+```jsx
+<Breadcrumb separator=">">
+  <Breadcrumb.Link href="/">Home</Breadcrumb.Link>
+  <Breadcrumb.Link href="/components">Components</Breadcrumb.Link>
+  <Breadcrumb.Link href="/components/breadcrumb">Breadcrumb</Breadcrumb.Link>
+</Breadcrumb>
+```

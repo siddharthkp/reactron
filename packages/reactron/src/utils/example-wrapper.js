@@ -19,7 +19,7 @@ function ExampleWrapper(props) {
     <ThemeProvider theme={theme}>
       <Element
         padding={4}
-        backgroundColor="grays.0"
+        backgroundColor="white"
         border="1px solid"
         borderColor="grays.2"
       >

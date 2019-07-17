@@ -1,4 +1,5 @@
 const colors = {
+  white: "#fff",
   reds: [
     "#F8E4E4",
     "#EFA6A6",
@@ -55,5 +56,8 @@ const colors = {
     "#202833"
   ]
 };
+
+colors.link = colors.blues[5];
+colors.black = colors.grays[8];
 
 export default colors;

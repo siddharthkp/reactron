@@ -1,0 +1,31 @@
+---
+title: Badge
+description: A component for showing count and labels
+---
+
+import { Badge } from "reactron";
+import BadgeExamples from "reactron/src/badge/examples";
+
+<span>{console.log(Examples.Simple)}</span>
+
+## Examples
+
+<BadgeExamples.Simple />
+
+```jsx
+<Badge>Oh noes!</Badge>
+```
+
+### Appearances
+
+There are multiple appearances for `Badge`, dependending on the context.
+
+<BadgeExamples.Styles />
+
+```jsx
+<Badge appearance="warning">Hey! You should take care of this</Badge>
+<Badge appearance="error">Oh no! Something went horribly wrong</Badge>
+<Badge appearance="info">By the way, here's some information</Badge>
+<Badge appearance="success">Kudos! You did great</Badge>
+<Badge appearance="transparent">Sometimes, you have to subtle</Badge>
+```
