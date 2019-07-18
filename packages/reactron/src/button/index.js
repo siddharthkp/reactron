@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { Element } from "reactron/utils";
 import { button as styles } from "tokens/components";
 
+// TODO: Add ellipsis ... if there is too much text
 function Button({ appearance, size, ...props }) {
   return (
     <Element
