@@ -14,18 +14,16 @@ function Simple() {
 function Styles() {
   return (
     <ExampleWrapper>
-      <Button margin={2}>Click me</Button>
-      <Button margin={2} appearance="info">
+      <Button margin={2} appearance="default">
         Click me
       </Button>
-      <Button margin={2} appearance="success">
+      <Button margin={2} appearance="primary">
         Click me
       </Button>
-      <br />
-      <Button margin={2} appearance="warning">
+      <Button margin={2} appearance="secondary">
         Click me
       </Button>
-      <Button margin={2} appearance="error">
+      <Button margin={2} appearance="destructive">
         Click me
       </Button>
       <Button margin={2} appearance="link">
@@ -35,4 +33,20 @@ function Styles() {
   );
 }
 
-export default { Simple, Styles };
+function Sizes() {
+  return (
+    <ExampleWrapper>
+      <Button margin={2} size="small">
+        Click me
+      </Button>
+      <Button margin={2} size="default">
+        Click me
+      </Button>
+      <Button margin={2} size="large">
+        Click me
+      </Button>
+    </ExampleWrapper>
+  );
+}
+
+export default { Simple, Styles, Sizes };

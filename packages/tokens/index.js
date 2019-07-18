@@ -8,8 +8,9 @@ import buttonStyles from "./button-styles";
 /* Spacing */
 const space = [0, 4, 8, 16, 32, 48, 64];
 
-const sizes = [0, 4, 8, 16, 32, 48, 64];
+const sizes = [16, 24, 36, 48, 64];
 sizes.clickable = sizes[5];
+sizes.button = { small: sizes[1], default: sizes[2], large: sizes[3] };
 sizes.avatar = { small: 36, medium: 96, large: 144 };
 
 /* Typography */

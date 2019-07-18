@@ -1,9 +1,6 @@
-import colors from "../colors";
-
 export default {
-  paddingX: 3,
-  paddingY: 2,
-  fontSize: "base",
   border: "none",
-  borderRadius: 1
+  borderRadius: 1,
+  paddings: { small: 2, default: 3, large: 4 },
+  fontSizes: { small: 2, default: "base", large: 4 }
 };
