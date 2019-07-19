@@ -1,23 +1,25 @@
 import React from "react";
 import { Stack } from "reactron";
 import { button as styles } from "tokens/components";
+import css from "@styled-system/css";
 import theme from "tokens";
 
 function ButtonGroup(props) {
   const children = React.Children.map(props.children, function(child, index) {
-    const borderRadius = 0;
-    const style = {};
-    const buttonBorderRadius = theme.radii[styles.borderRadius];
+    const overrideStyles = {
+      borderRadius: 0,
+      "&:hover": {
+        background: "black"
+      }
+    };
 
     if (index === 0) {
-      style.borderTopLeftRadius = buttonBorderRadius;
-      style.borderBottomLeftRadius = buttonBorderRadius;
+      overrideStyles.borderLeftRadius = styles.borderRadius;
     } else if (index === props.children.length - 1) {
-      style.borderTopRightRadius = buttonBorderRadius;
-      style.borderBottomRightRadius = buttonBorderRadius;
+      overrideStyles.borderRightRadius = styles.borderRadius;
     }
 
-    return React.cloneElement(child, { borderRadius, style });
+    return React.cloneElement(child, { ...overrideStyles });
   });
   return <Stack>{children}</Stack>;
 }

@@ -1,0 +1,22 @@
+---
+title: Base Element
+description: You can use this element to compose new components
+---
+
+```jsx
+import { Element } from "reactron/utils";
+
+function Button({ appearance, size, ...props }) {
+  return <Element as="button" {...props} />;
+}
+```
+
+See /guides/creating-a-component for more info.
+
+### You can import styles
+
+### Add additional styles to child with overrideStyles
+
+### You can use variants
+
+### Don't forget to forward props

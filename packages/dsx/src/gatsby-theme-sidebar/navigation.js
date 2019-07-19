@@ -7,12 +7,12 @@ const navigation = [
       'Extending',
       'Accessibility',
       'Guiding principles',
-      'FAQs',
-    ],
+      'FAQs'
+    ]
   },
   {
     title: 'Layouts',
-    items: ['Row', 'Column', 'Grid', 'Stack'],
+    items: ['Row', 'Column', 'Grid', 'Stack']
   },
   {
     title: 'Components',
@@ -36,13 +36,13 @@ const navigation = [
       'Progress',
       'Spinner',
       'Toast',
-      'Tooltip',
-    ],
+      'Tooltip'
+    ]
   },
   {
     title: 'Utilities',
-    items: ['Tokens'],
-  },
+    items: ['Base Element', 'Tokens']
+  }
 ]
 
 export default navigation

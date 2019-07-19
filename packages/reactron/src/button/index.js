@@ -8,10 +8,10 @@ function Button({ appearance, size, ...props }) {
   return (
     <Element
       as="button"
-      variant={appearance}
       height={"button." + size}
       paddingX={styles.paddings[size]}
       fontSize={styles.fontSizes[size]}
+      variant={appearance}
       {...styles}
       {...props}
     />

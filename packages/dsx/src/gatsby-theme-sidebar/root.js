@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 import { SkipNavLink, SkipNavContent } from '@reach/skip-nav'
 
+// TODO: move navigation to page context
 import navigation from './navigation'
 
 function Sidebar({ Layout, Main, Sidebar, Content, ...props }) {
