@@ -59,5 +59,6 @@ const colors = {
 
 colors.link = colors.blues[5];
 colors.black = colors.grays[8];
+colors.subtle = colors.grays[7];
 
 export default colors;

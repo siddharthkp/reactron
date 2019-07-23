@@ -1,7 +1,7 @@
 import colors from "../colors";
 
 const button = {
-  borderRadius: 2,
+  borderRadius: 2, // match input to look good next to each other
   borderWidth: "1px",
   borderStyle: "solid",
   cursor: "pointer",
@@ -16,7 +16,7 @@ const button = {
     default: {
       color: colors.black,
       backgroundColor: colors.grays[1],
-      borderColor: colors.grays[1],
+      borderColor: colors.grays[2],
       "&:hover": {
         backgroundColor: colors.grays[2],
         borderColor: colors.grays[2]

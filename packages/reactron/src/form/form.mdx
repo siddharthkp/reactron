@@ -1,0 +1,68 @@
+---
+title: Form
+description: Use a Form to ask the user for related information
+---
+
+import FormExamples from "reactron/src/form/examples";
+
+<FormExamples.Simple />
+
+```jsx
+<Form>
+  <Form.Field label="Email address">
+    <Input type="email" placeholder="Enter email" />
+  </Form.Field>
+
+  <Form.Field label="Password">
+    <Input type="password" placeholder="Enter password" />
+  </Form.Field>
+
+  <Form.Actions>
+    <Button type="submit" appearance="primary">
+      Submit
+    </Button>
+    <Button type="reset" appearance="link">
+      Reset
+    </Button>
+  </Form.Actions>
+</Form>
+```
+
+### Validation errors
+
+<FormExamples.ValidationErrors />
+
+```jsx
+<Form>
+  <Form.Field
+    label="Email address"
+    description="We'll never share your email with anyone else."
+    error="Email address is not valid"
+  >
+    <Input type="email" placeholder="Enter email" />
+  </Form.Field>
+
+  <Form.Field
+    label="Password"
+    error="Password should have at least 8 charachters"
+  >
+    <Input type="password" placeholder="Enter password" />
+  </Form.Field>
+
+  <Form.Actions>
+    <Button type="submit" appearance="primary">
+      Submit
+    </Button>
+  </Form.Actions>
+</Form>
+```
+
+### Button types
+
+Make sure you attach a `type` to each `Button` inside the `Form`.
+
+Valid types are:
+
+- `submit`: Submits the current form data. (This is default.)
+- `reset`: Resets data in the current form.
+- `button`: Just a button. Attach an event handler for this.

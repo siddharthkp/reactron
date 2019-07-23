@@ -4,7 +4,7 @@ import { Element } from "reactron/utils";
 import { button as styles } from "tokens/components";
 
 // TODO: Add ellipsis ... if there is too much text
-function Button({ appearance, size, ...props }) {
+function Button({ appearance, size, disabled, ...props }) {
   return (
     <Element
       as="button"
@@ -13,6 +13,7 @@ function Button({ appearance, size, ...props }) {
       fontSize={styles.fontSizes[size]}
       variant={appearance}
       {...styles}
+      style={{ opacity: disabled ? 0.5 : 1 }}
       {...props}
     />
   );
