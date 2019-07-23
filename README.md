@@ -6,6 +6,10 @@
 
 &nbsp;
 
+🚧Work in progress. [Live streaming the process here](https://www.youtube.com/playlist?list=PLZVuD5_lqlbPJwwR2zRYDAyuCGrMqkH5N&disable_polymer=true)
+
+&nbsp;
+
 This is a monorepo
 
 - [components](/packages/reactron)
