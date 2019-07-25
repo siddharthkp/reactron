@@ -35,6 +35,7 @@ const navigation = [
       'Pagination',
       'Progress',
       'Spinner',
+      'Tabs',
       'Toast',
       'Tooltip'
     ]

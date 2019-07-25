@@ -13,6 +13,7 @@
     "@emotion/core": "^10.0.14",
     "@emotion/styled": "^10.0.14",
     "@reach/alert": "^0.1.5",
+    "@reach/tabs": "^0.1.6",
     "@styled-system/css": "^5.0.13",
     "@styled-system/prop-types": "^5.0.12",
     "@styled-system/should-forward-prop": "^5.0.12",

@@ -5,12 +5,14 @@ const button = {
   borderWidth: "1px",
   borderStyle: "solid",
   cursor: "pointer",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
 
   // TODO: Create a size variant
   paddings: { small: 2, default: 3, large: 4 },
   fontSizes: { small: 1, default: "base", large: 4 },
 
-  // TODO: Add hover statues
   variants: {
     /* these match the appearance prop in the component */
     default: {
@@ -29,6 +31,10 @@ const button = {
       "&:hover": {
         backgroundColor: colors.greens[7],
         borderColor: colors.greens[7]
+      },
+      spinner: {
+        borderColor: colors.greens[6],
+        borderLeftColor: colors.white
       }
     },
     secondary: {
@@ -47,6 +53,10 @@ const button = {
       "&:hover": {
         backgroundColor: colors.reds[6],
         borderColor: colors.reds[6]
+      },
+      spinner: {
+        borderColor: "transparent",
+        borderLeftColor: colors.white
       }
     },
     link: {
@@ -55,6 +65,9 @@ const button = {
       borderColor: "transparent",
       "&:hover": {
         color: colors.blues[7]
+      },
+      spinner: {
+        borderLeftColor: colors.link
       }
     }
   }

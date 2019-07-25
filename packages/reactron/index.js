@@ -5,6 +5,7 @@ import Breadcrumb from "./src/breadcrumb";
 import Button from "./src/button";
 import Input from "./src/input";
 import Form from "./src/form";
+import Spinner from "./src/spinner";
 import Stack from "./src/stack";
 import { ThemeProvider } from "emotion-theming";
 
@@ -16,6 +17,7 @@ export {
   Button,
   Input,
   Form,
+  Spinner,
   Stack,
   ThemeProvider
 };

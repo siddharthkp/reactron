@@ -12,6 +12,7 @@ const sizes = [16, 24, 36, 48, 64, 96, 144];
 sizes.clickable = sizes[5];
 sizes.button = { small: sizes[1], default: sizes[2], large: sizes[3] };
 sizes.avatar = { small: sizes[2], medium: sizes[5], large: sizes[6] };
+sizes.spinner = { small: 12, default: sizes[0], large: 20 };
 
 /* Typography */
 const fontSizes = [12, 14, 16, 18, 20, 24, 32, 48, 64, 72];
