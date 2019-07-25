@@ -1,3 +1,4 @@
+import React from "react";
 import { color, space, border } from "styled-system";
 import { ThemeProvider } from "reactron";
 import { styled } from "reactron/utils";
@@ -7,6 +8,8 @@ const Element = styled("div")`
   ${color}
   ${space}
   ${border}
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Ubuntu, Droid Sans, Helvetica Neue, sans-serif;
   border-radius: ${get("radii.2")}px ${get("radii.2")}px 0 0;
   & + pre.prism-code {
     border-radius: 0 0 4px 4px;

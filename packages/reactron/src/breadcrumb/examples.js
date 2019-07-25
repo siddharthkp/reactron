@@ -1,8 +1,7 @@
 import React from "react";
-import { Link } from "gatsby";
 
 import Breadcrumb from "./index";
-import ExampleWrapper from "../utils/example-wrapper";
+import { ExampleWrapper } from "reactron/utils";
 
 function Simple() {
   return (
@@ -16,6 +15,10 @@ function Simple() {
       </Breadcrumb>
     </ExampleWrapper>
   );
+}
+
+function Link({ to, ...props }) {
+  return <a href={to} {...props} />;
 }
 
 function ExternalLink() {
