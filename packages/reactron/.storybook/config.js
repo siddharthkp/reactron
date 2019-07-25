@@ -1,3 +1,5 @@
+import "storybook-chromatic";
+
 import React from "react";
 import path from "path";
 import { configure, storiesOf } from "@storybook/react";
