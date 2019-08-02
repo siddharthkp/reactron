@@ -26,10 +26,10 @@
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",
-    "@storybook/addon-actions": "^5.1.9",
-    "@storybook/addon-links": "^5.1.9",
-    "@storybook/addons": "^5.1.9",
-    "@storybook/react": "^5.1.9",
+    "@storybook/addon-actions": "^5.1.10",
+    "@storybook/addon-links": "^5.1.10",
+    "@storybook/addons": "^5.1.10",
+    "@storybook/react": "^5.1.10",
     "babel-loader": "^8.0.6",
     "dsx": "0.0.1",
     "storybook-chromatic": "^2.0.0"

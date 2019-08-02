@@ -2,8 +2,7 @@
   "name": "reactron-workspace",
   "private": true,
   "scripts": {
-    "test": "chromatic test --app-code='bf9wew1za1q'",
-    "build-storybook": "cd packages/reactron && npm run build-storybook"
+    "test": "cd packages/reactron && chromatic test --app-code='bf9wew1za1q'"
   },
   "workspaces": [
     "packages/*"

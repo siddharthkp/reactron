@@ -5,7 +5,7 @@ const button = {
   borderWidth: "1px",
   borderStyle: "solid",
   cursor: "pointer",
-  display: "flex",
+  display: "inline-flex",
   justifyContent: "center",
   alignItems: "center",
 
